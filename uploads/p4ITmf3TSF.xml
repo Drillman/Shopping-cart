@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <fruit>
+        <id>1</id>
+        <nom>Pomme</nom>
+        <prix>10</prix>
+        <qte>0</qte>
+    </fruit>
+    <fruit>
+        <id>2</id>
+        <nom>Kiwi</nom>
+        <prix>20</prix>
+        <qte>0</qte>
+    </fruit>
+    <fruit>
+        <id>3</id>
+        <nom>Banane</nom>
+        <prix>30</prix>
+        <qte>0</qte>
+    </fruit>
+    <fruit>
+        <id>4</id>
+        <nom>Poire</nom>
+        <prix>40</prix>
+        <qte>0</qte>
+    </fruit>
+    <fruit>
+        <id>5</id>
+        <nom>Orange</nom>
+        <prix>20</prix>
+        <qte>0</qte>
+    </fruit>
+</document>
