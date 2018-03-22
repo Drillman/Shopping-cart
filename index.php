@@ -1,29 +1,25 @@
 <?php
-use fruit;
-
 session_start();
 
 if(!isset($_SESSION['panier'])){
     $_SESSION['panier'] = array(
-        new fruit(1,'pomme',10,0),
+        array("id"=>1, "nom"=>'pomme', "prix"=>10, "qte"=>0),
         array("id"=>2, "nom"=>'kiwi', "prix"=>20, "qte"=>0),
         array("id"=>3, "nom"=>'banane', "prix"=>30, "qte"=>0)
     );
     header('Refresh:0');
-
 }
-var_dump($_SESSION['panier']);
+
 if(isset($_GET['fruit']) && isset($_GET['action'])){
     $fruit = $_GET['fruit'];
     $array_id = null;
     $action = $_GET['action'];
 
     for($i = 0; $i < sizeof($_SESSION['panier']); $i++){
-        if($_SESSION['panier'][$i]['nom'] == $fruit['nom']){
+        if($_SESSION['panier'][$i]['nom'] == $fruit){
             $array_id = $i;
         }
     }
-    var_dump($array_id);
     switch ($action){
         case 'plus':
             $_SESSION['panier'][$array_id]['qte'] ++;
@@ -54,4 +50,9 @@ if(isset($_SESSION['panier'])){
 
 ?>
 </br>
-<a href='kill.php'> Session kill </a>
+<a href='kill.php'> Session kill </a></br>
+<?php if(isset($_SESSION['error'])){
+    echo 'Erreur : '.$_SESSION['error'];
+    unset($_SESSION['error']);
+}
+?>
